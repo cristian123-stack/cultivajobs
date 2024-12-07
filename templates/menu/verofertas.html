@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ver Ofertas</title>
+    <style>
+        /* Estilo general del body */
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Estilo para la barra de navegación */
+        .navbar {
+            background-color: #005f99;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilo para el título principal */
+        h1 {
+            color: #005f99;
+            margin-top: 20px;
+        }
+
+        /* CSS para mostrar las ofertas de lado */
+        .ofertas-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .oferta {
+            width: 250px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            text-align: left;
+        }
+
+        .oferta strong {
+            color: #005f99;
+            font-size: 1.1em;
+        }
+
+        /* Enlaces de retorno */
+        a {
+            color: #005f99;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <h1>CultivaJobs</h1>
+        <ul>
+            <li><a href="{% url 'menu_empleador' %}">Inicio Empleador</a></li>
+            <li><a href="{% url 'crear_oferta' %}">Crear Oferta</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <h1>Ofertas Publicadas</h1>
+
+    {% if ofertas %}
+        <div class="ofertas-container">
+            {% for oferta in ofertas %}
+                <div class="oferta">
+                    <strong>{{ oferta.titulo }}</strong>: {{ oferta.descripcion }}
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No hay ofertas disponibles.</p>
+    {% endif %}
+
+    <a href="{% url 'menu_empleador' %}">Volver a Empleador</a>
+</body>
+</html>

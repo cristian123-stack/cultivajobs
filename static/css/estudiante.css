@@ -1,0 +1,115 @@
+/* estudiante.css */
+
+/* Estilo general del body */
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo para la barra de navegación */
+.navbar {
+    background-color: #005f99;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1.5em;
+    color: white;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el contenido */
+h1 {
+    color: #005f99;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li a {
+    color: #005f99;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* CSS para mostrar las ofertas de lado */
+.ofertas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.oferta {
+    width: 250px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+.oferta h3 {
+    margin-top: 0;
+    color: #005f99;
+}
+
+.oferta p {
+    color: #333;
+}
+
+.oferta button {
+    background-color: #005f99;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.oferta button:hover {
+    background-color: #004080;
+}

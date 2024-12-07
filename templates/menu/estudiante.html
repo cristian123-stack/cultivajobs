@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menú Estudiante</title>
+    <link href="{% static 'css/estudiante.css' %}" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <h1>CultivaJobs</h1>
+        <ul>
+            <li><a href="{% url 'perfil_estudiante' %}">Actualizar mi perfil</a></li>
+            <li><a href="{% url 'home' %}">Cerrar sesión</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <h1>Bienvenido, Estudiante</h1>
+
+    <!-- Formulario de búsqueda y filtros -->
+    <h2>Buscar Ofertas de Trabajo</h2>
+    <form method="GET" action="{% url 'buscar_ofertas' %}" class="mb-4">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="q" placeholder="Buscar por palabra clave" value="{{ query }}">
+            <select class="form-select" name="categoria">
+                <option value="">Todas las categorías</option>
+                <option value="CR" {% if categoria == 'CR' %}selected{% endif %}>Comida Rápida</option>
+                <option value="RT" {% if categoria == 'RT' %}selected{% endif %}>Retail</option>
+                <option value="SP" {% if categoria == 'SP' %}selected{% endif %}>Supermercado</option>
+                <option value="LM" {% if categoria == 'LM' %}selected{% endif %}>Logística y Mensajería</option>
+                <option value="AT" {% if categoria == 'AT' %}selected{% endif %}>Atención al Cliente</option>
+            </select>
+            <button class="btn btn-primary" type="submit">Buscar</button>
+        </div>
+    </form>
+
+    <!-- Resultados de Ofertas -->
+    <h2>Ofertas Disponibles</h2>
+
+    <div class="ofertas-container">
+        {% if ofertas %}
+            {% for oferta in ofertas %}
+                <div class="oferta">
+                    <h3>{{ oferta.titulo }}</h3>
+                    <p>{{ oferta.descripcion }}</p>
+                    <small>{{ oferta.get_categoria_display }}</small>
+                    
+                    <!-- Verificar si la oferta está en las postulaciones del estudiante -->
+                    {% if oferta in postulaciones %}
+                        <form action="{% url 'cancelar_postulacion' oferta.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-warning">Cancelar Postulación</button>
+                        </form>
+                    {% else %}
+                        <form action="{% url 'postular_oferta' oferta.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary">Postular</button>
+                        </form>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No se encontraron ofertas de trabajo para los criterios de búsqueda.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

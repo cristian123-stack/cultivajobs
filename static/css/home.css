@@ -1,0 +1,83 @@
+/* Resetear márgenes y padding para evitar inconsistencias */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    background-color: #008CBA; /* Azul celeste */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6347; /* Color de hover */
+}
+
+/* Centro del nombre de la plataforma */
+nav .nav-center {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Contenido principal */
+.contenido-principal {
+    flex: 1; /* Este contenedor crece para llenar el espacio restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Footer */
+.imagenes-footer {
+    color: white; /* Texto blanco */
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.imagenes-footer img {
+    width: 100px; /* Tamaño de cada imagen */
+    margin: 10px; /* Espaciado entre las imágenes */
+}
+

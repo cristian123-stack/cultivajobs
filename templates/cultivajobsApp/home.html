@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultivajobs</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <style>
+        /* Estilos generales del diseño */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* La página siempre ocupará toda la altura de la ventana */
+            background-image: url('{% static "img/portada.jpg" %}');
+            background-size: cover;
+
+        }
+
+        .contenido-principal {
+            flex: 1; /* Este contenedor crecerá para llenar el espacio disponible */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li class="nav-item">
+                <a href="{% url 'home' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item nav-center">
+                <span>Cultivajobs</span>
+            </li>
+            <li class="nav-item nav-right">
+                <a href="{% url 'registroestudiante' %}" class="nav-link">Registrarse como Estudiante</a>
+            </li>
+            <li class="nav-item nav-right">
+                <a href="{% url 'registroempleador' %}" class="nav-link">Registrarse como Empresa</a>
+            </li>
+            <li class="nav-item nav-right">
+                <a href="{% url 'sobrenosotros' %}" class="nav-link">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item nav-right">
+                <a href="{% url 'login' %}" class="nav-link">Iniciar Sesión</a>
+            </li>
+        </ul>
+    </nav>
+
+        <!-- Contenido principal -->
+        <div class="contenido-principal">
+        </div>
+
+    <!-- Footer -->
+    <footer class="imagenes-footer">
+        <img src="{% static 'img/inacap.png' %}" alt="Logo 1">
+        <p>&copy; 2024 Cultivajobs. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

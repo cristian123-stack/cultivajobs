@@ -1,0 +1,113 @@
+/* empleador.css */
+
+/* Estilo general del body */
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo para la barra de navegación */
+.navbar {
+    background-color: #005f99;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1.5em;
+    color: white;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el contenido */
+h1 {
+    color: #005f99;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li a {
+    color: #005f99;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+
+/* Estilo general para la cuadrícula de ofertas */
+.ofertas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.oferta-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.oferta-card h3 {
+    color: #005f99;
+}
+
+.oferta-card p {
+    color: #333;
+}
+
+.oferta-card a {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #005f99;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.oferta-card a:hover {
+    background-color: #004080;
+}

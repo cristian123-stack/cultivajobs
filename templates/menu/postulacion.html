@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Postulación Exitosa</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .container h1 {
+            color: #005f99;
+        }
+        .container p {
+            font-size: 1.1em;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #005f99;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #004080;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Postulación Exitosa!</h1>
+        <p>Te has postulado exitosamente a la oferta: {{ oferta.titulo }}.</p>
+        <p>El empleador revisará tu perfil y se pondrá en contacto si eres seleccionado.</p>
+        <a href="{% url 'menu_estudiante' %}" class="btn">Volver al Menú Estudiante</a>
+    </div>
+</body>
+</html>

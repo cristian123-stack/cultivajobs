@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menú Empleador</title>
+    <link href="{% static 'css/empleador.css' %}" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <h1>CultivaJobs</h1>
+        <ul>
+            <li><a href="{% url 'menu_ofertas' %}">Publicar oferta de trabajo</a></li>
+            <li><a href="{% url 'home' %}">Cerrar sesión</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <h1>Bienvenido, Empleador</h1>
+
+    <h2>Mis Ofertas</h2>
+    
+    <div class="ofertas-container">
+        {% for oferta in ofertas %}
+            <div class="oferta-card">
+                <h3>{{ oferta.titulo }}</h3>
+                <p>{{ oferta.descripcion }}</p>
+                <a href="{% url 'vercandidatos' oferta.id %}" class="btn btn-primary">Ver Candidatos</a>
+            </div>
+        {% empty %}
+            <p>No has publicado ninguna oferta aún.</p>
+        {% endfor %}
+    </div>
+
+    <!-- Cerrar sesión -->
+    <ul>
+        <li><a href="{% url 'home' %}">Cerrar sesión</a></li>
+    </ul>
+
+</body>
+</html>

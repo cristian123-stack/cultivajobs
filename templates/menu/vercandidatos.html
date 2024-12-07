@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Candidatos para la Oferta</title>
+    <link href="{% static 'css/vercandidatos.css' %}" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <h1>CultivaJobs</h1>
+        <ul>
+            <li><a href="{% url 'menu_empleador' %}">Volver al Menú del Empleador</a></li>
+            <li><a href="{% url 'menu_ofertas' %}">Publicar oferta de trabajo</a></li>
+            <li><a href="{% url 'home' %}">Cerrar sesión</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <h1>Candidatos para la oferta: {{ oferta.titulo }}</h1>
+    <h2>Candidatos que se han postulado</h2>
+
+    {% if estudiantes_postulados %}
+        <div class="candidatos-container">
+            {% for estudiante in estudiantes_postulados %}
+                <div class="candidato-card">
+                    <h3>{{ estudiante.nombre }}</h3>
+                    <p><strong>Descripción:</strong> {{ estudiante.descripcion }}</p>
+                    <p><strong>Habilidades:</strong> {{ estudiante.habilidades }}</p>
+                    <p><strong>Email:</strong> {{ estudiante.email }}</p>
+                    <p><strong>Dirección:</strong> {{ estudiante.direccion }}</p>
+                    <p><strong>Teléfono:</strong> {{ estudiante.telefono }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No hay candidatos que se hayan postulado aún.</p>
+    {% endif %}
+</body>
+</html>

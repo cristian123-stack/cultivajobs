@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobrenosotros</title>
+    <link rel="stylesheet" href="{% static 'css/sobrenosotros.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="nav-item">
+                <a href="{% url 'home' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item nav-center">
+                <span>Cultivajobs</span>
+            </li>
+            <li class="nav-item nav-right">
+                <a href="{% url 'registroestudiante' %}" class="nav-link">Registrarse como Estudiante</a>
+            </li>
+            <li class="nav-item nav-right">
+                <a href="{% url 'registroempleador' %}" class="nav-link">Registrarse como Empresa</a>
+            </li>
+            <li class="nav-item nav-right">
+                <a href="{% url 'sobrenosotros' %}" class="nav-link">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item nav-right">
+                <a href="{% url 'login' %}" class="nav-link">Iniciar Sesión</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <p>
+                En Cultivajobs, nos dedicamos a conectar estudiantes universitarios con oportunidades laborales en diversas empresas, facilitando el proceso de ingreso al mundo laboral y permitiendo a los empleadores encontrar jóvenes talentos que aporten a sus organizaciones.
+            </p>
+            <p>
+                Trabajamos para crear una plataforma intuitiva y accesible que permita a estudiantes y empresas interactuar de manera directa y eficiente.
+            </p>
+        </section>
+
+        <h1>Nuestros sponsors</h1>
+        <section>
+            <!-- Logos de sponsors -->
+            <img src="{% static 'img/lider.png' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/homecenter.png' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/easy.webp' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/falabella.png' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/unimarc.jpeg' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/paris.png' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/doggis.jpg' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/mcdonald.jpg' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/carlsjr.png' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/pjd.webp' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/jumbo.png' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/matimechadas.png' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/tarragona.jpg' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/kfc.png' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/cinepolis.jpg' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/dominos.jpg' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/burgerking.png' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/copec.jpg' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/shell.png' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/unifrutti.png' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/copefrut.png' %}" alt="Logo" height="100px" width="150px">
+            <img src="{% static 'img/sanclemente.jpg' %}" alt="Logo" height="100px" width="150px">
+        </section>
+    </main>
+
+    <footer>
+        <p>Síguenos en Instagram: 
+            <a href="https://www.instagram.com/cultivajobs?igsh=MTJqbjQ0MzdleTBudg==" target="_blank">
+                <i class="fab fa-instagram"></i> Cultivajobs
+            </a>
+        </p>
+    </footer>
+
+</body>
+</html>
